@@ -1,13 +1,88 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.box {
+  width: 10%;
+  height: 100%;
+  display: inline;
+}
+
+.container {
+  width: 100vmin;
+  height: 100vmin;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: #000000 solid 1px; */
+}
+
+.container_1 {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  justify-content: space-between;
+}
+
+.number {
+  font-size: larger;
+  font-weight: 400;
+}
+
+.dice {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100vmin;
+  height: 100vmin;
+  z-index: 1;
+}
+
+.roll {
+  height: 20%;
+  width: 20%;
+  font-size: xxx-large;
+  opacity: 0.8;
+}
+
+.player {
+  width: 8vmin;
+  height: 8vmin;
+  position: fixed;
+  border: 1px solid #000000;
+  border-radius: 4vmin;
+}
+
+.player1 {
+  margin-top: 0.75vmin;
+  margin-left: 0.25vmin;
+  background-color: aqua;
+  z-index: 1;
+}
+
+.player2 {
+  margin-top: 0.75vmin;
+  margin-left: 1.25vmin;
+  background-color: coral;
+  z-index: 1;
+
+}
+
+
+.logo {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vmin;
+  height: 100vmin;
+  z-index: 1;
+}
+
+.logoImg {
+  width: 70vmin;
+  height: 50vmin;
 }

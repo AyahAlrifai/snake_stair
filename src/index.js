@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Table from './Table.js';
+import Staircase from './Staircase.js';
+import Snake from './Snake.js';
+import { useState, createContext } from 'react';
+
+export const dimentionsContext = createContext();
+export const setDimentionsContext = createContext();
+
+const App = () => {
+  let [dimentions, setDimentions] = useState({});
+  let data= require(`./input.json`)[0];
+
+  return <div className='container'>
+    <setDimentionsContext.Provider value={setDimentions}>
+      <dimentionsContext.Provider value={dimentions}>
+        <Table  data={data}/>
+      </dimentionsContext.Provider>
+    </setDimentionsContext.Provider>
+    <Staircase dimentions={dimentions} data={data.up} />
+    <Snake dimentions={dimentions} data={data.down} />
+  </div>
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <App />
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
